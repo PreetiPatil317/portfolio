@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 338" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGmail" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4338CA" />
+      <stop offset="100%" stop-color="#312E81" />
+    </linearGradient>
+  </defs>
+  <rect width="600" height="338" rx="8" fill="url(#bgGmail)"/>
+  <rect x="30" y="30" width="540" height="278" rx="6" fill="none" stroke="#FFFFFF" stroke-opacity="0.15" stroke-width="1.5"/>
+  <rect x="50" y="56" width="140" height="28" rx="14" fill="#FFFFFF" fill-opacity="0.2"/>
+  <text x="120" y="75" font-family="Figtree, system-ui, sans-serif" font-weight="600" font-size="12" fill="#FFFFFF" text-anchor="middle" letter-spacing="0.05em">PRODUCT TEARDOWN</text>
+  <text x="50" y="152" font-family="Figtree, system-ui, sans-serif" font-weight="800" font-size="34" fill="#FFFFFF" letter-spacing="-0.02em">Gmail</text>
+  <text x="50" y="194" font-family="Figtree, system-ui, sans-serif" font-weight="600" font-size="20" fill="#E0E7FF">Phishing &amp; Suspicious Warnings</text>
+  <text x="50" y="248" font-family="Literata, Georgia, serif" font-style="italic" font-size="16" fill="#C7D2FE">Google Product Teardown &amp; A/B Experiment Design</text>
+</svg>

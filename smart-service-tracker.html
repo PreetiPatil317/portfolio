@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Smart Service Tracker | PRD &amp; MVP Case Study | Preeti Patil</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="description" content="Smart Service Tracker: Two-Sided Banking Queue &amp; Request Management MVP">
+<meta property="og:title" content="Smart Service Tracker | PRD &amp; MVP Case Study | Preeti Patil">
+<meta property="og:description" content="Smart Service Tracker: Two-Sided Banking Queue &amp; Request Management MVP">
+<meta property="og:type" content="article">
+<meta property="og:image" content="images/card-sst.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Smart Service Tracker | PRD &amp; MVP Case Study | Preeti Patil">
+<meta name="twitter:description" content="Smart Service Tracker: Two-Sided Banking Queue &amp; Request Management MVP">
+<meta name="twitter:image" content="images/card-sst.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="reading-progress"></div>
+<main class="wrap">
+  <div class="top-bar">
+    <b><a href="index.html">← Preeti Patil</a></b>
+    <a class="back-link" href="index.html">← Back to Portfolio</a>
+  </div>
+
+  <header class="hero"><div><h1>PRD &amp; MVP Case Study: Smart Service Tracker</h1><p class="byline">MCA Graduate &amp; Full-Stack Builder transitioning into Product Management.</p><p class="sub">Smart Service Tracker: Two-Sided Banking Queue &amp; Request Management MVP</p></div><div class="meta">
+    <p><b>Role:</b> Product Lead &amp; Full-Stack Developer (Team InitX — 2-Person Sprint)</p>
+    <p><b>Timeline:</b> 6-Hour Build &amp; Live Pitch (Code Flash Hackathon 2025, KLE Institute of Technology)</p>
+    <p><b>Tech Stack:</b> PHP, MySQL, Bootstrap 5, JavaScript, QR Code Generation</p>
+    <p><b>Code Repository:</b> <span class="gh">GitHub — Smart Service Tracker</span></p>
+  </div></header><div class="layout"><nav class="rail" aria-label="Sections">
+<a href="#s1">Problem Discovery</a><a href="#s2">Personas &amp; User Stories</a><a href="#s3">MVP Scope &amp; Trade-Offs</a><a href="#s4">UX Flow &amp; Screens</a><a href="#s5">Success Metrics</a><a href="#s6">Reflection &amp; v2 Roadmap</a></nav><div class="content">
+
+  <section id="s1">
+    <h2>1. Executive Summary &amp; Problem Discovery (User Empathy)</h2>
+    <p>Instead of picking a pre-defined hackathon prompt, we conducted rapid firsthand problem discovery around recurring friction in retail bank branches across India (such as cheque book issuance, ATM card replacements, and KYC/address updates).</p>
+    <h3>Core Pain Points Identified</h3>
+    <ol>
+      <li><b>Customer Opacity:</b> Customers wait in long physical queues without knowing whether their service request has been assigned or processed.</li>
+      <li><b>Repeat Branch Visits:</b> Lack of asynchronous status visibility forces customers to revisit the branch just to ask, <em>“What is the update?”</em></li>
+      <li><b>Officer File Bottlenecks:</b> Bank officers handle paper files manually without a unified triage queue, making it hard to identify urgent or aging requests.</li>
+      <li><b>Communication Disconnect:</b> No structured channel exists for officers to log quick remarks (e.g., <em>“Missing signature on ID proof”</em>) before the customer returns.</li>
+    </ol>
+  </section>
+
+  <section id="s2">
+    <h2>2. Target User Personas &amp; User Stories</h2>
+    <p>To solve the workflow end-to-end, we designed a <b>two-sided product</b> serving two distinct user groups:</p>
+    <div class="personas"><div class="persona">
+      <h3>Persona A: Retail Bank Customer (“Ramesh, 42 — Salaried Account Holder”)</h3>
+      <ul>
+        <li><b>Goal:</b> Submit a service request once, leave the branch quickly, and check live progress from his phone.</li>
+        <li><b>User Stories:</b>
+          <ul style="margin-top:9px">
+            <li><em>As a customer,</em> I want to submit a service request and upload supporting documents digitally so I don’t lose paper forms.</li>
+            <li><em>As a customer,</em> I want an instant unique token and scannable QR code upon submission so I can check my status anytime without calling the branch.</li>
+            <li><em>As a customer,</em> I want to read officer remarks on my ticket so I know immediately if further action is needed.</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="persona">
+      <h3>Persona B: Branch Operations Officer (“Priya, 31 — Customer Service Officer”)</h3>
+      <ul>
+        <li><b>Goal:</b> View all incoming requests in one place, prioritize urgent tickets, and reduce counter interruptions.</li>
+        <li><b>User Stories:</b>
+          <ul style="margin-top:9px">
+            <li><em>As an officer,</em> I want to filter unassigned and urgent requests so I can triage high-priority tickets first.</li>
+            <li><em>As an officer,</em> I want to self-assign tickets and update status stages (<code>Received</code> → <code>In Progress</code> → <code>Completed</code>) with remarks so customers stop interrupting my desk for status checks.</li>
+          </ul>
+        </li>
+      </ul>
+    </div></div>
+  </section>
+
+  <section id="s3">
+    <h2>3. MVP Scope &amp; Prioritization Trade-Offs (Execution Readiness)</h2>
+    <p>With a strict <b>6-hour build-and-pitch constraint</b>, we used an <b>Impact vs. Effort (MoSCoW)</b> prioritization matrix to cut feature bloat and ship a reliable end-to-end flow:</p>
+    <div class="scroll" role="region" aria-label="MVP scope table" tabindex="0">
+      <table>
+        <thead><tr><th>Feature</th><th>Priority</th><th>Decision</th><th>Product Rationale (Trade-Off)</th></tr></thead>
+        <tbody>
+          <tr><td>Digital Request &amp; Document Upload</td><td>Must-Have (P0)</td><td class="shipped">Shipped</td><td>Eliminates initial paper intake friction; essential core input.</td></tr>
+          <tr><td>Instant Token &amp; QR Code Generation</td><td>Must-Have (P0)</td><td class="shipped">Shipped</td><td>Zero-login, frictionless lookup for customers on mobile devices.</td></tr>
+          <tr><td>Officer Queue &amp; 3-Stage Status Triage</td><td>Must-Have (P0)</td><td class="shipped">Shipped</td><td>Directly solves officer prioritization and reduces counter interruptions.</td></tr>
+          <tr><td>Officer Remarks Log</td><td>Should-Have (P1)</td><td class="shipped">Shipped</td><td>High user empathy value with minimal MySQL schema overhead.</td></tr>
+          <tr><td>Automated SMS / WhatsApp Alerts</td><td>Could-Have (P2)</td><td class="cut">Cut for v1</td><td>Third-party gateway setup would consume &gt;2 hours; QR lookup covers immediate validation.</td></tr>
+          <tr><td>Core Banking (CBS) API Integration</td><td>Won’t-Have (v1)</td><td class="cut">Cut for v1</td><td>Out of scope for a 6-hour MVP; standalone relational DB proves workflow value first.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="s4" class="screen">
+    <h2>4. UX Flow &amp; Annotated Screens</h2>
+
+    <h3>Screen 1: Customer Request Intake &amp; Document Upload</h3>
+    <figure>
+      <img src="images/sst-screen-1-intake.jpg" alt="Smart Service Tracker customer dashboard showing the request list and the create new request form" loading="lazy">
+      <figcaption><em>UX Decision:</em> Placed a compact request form (request type, optional deadline, and optional supporting-document upload) alongside the customer’s existing request list and status on a single screen. Upon submission, the interface displays an immediate confirmation message with a unique request token, helping customers identify and track their requests.</figcaption>
+    </figure>
+
+    <h3>Screen 2: Instant QR Code &amp; Live Status Tracker</h3>
+    <figure>
+      <img src="images/sst-screen-2-qr-tracker.jpg" alt="Request detail screen with QR code, Approved status badge and a timeline of the request" loading="lazy">
+      <figcaption><em>UX Decision:</em> Generated a unique token ID and scannable QR code for each request, allowing customers to access request details and follow the processing timeline, including the final approval status.</figcaption>
+    </figure>
+
+    <h3>Screen 3: Officer Triage &amp; Prioritization Dashboard</h3>
+    <figure>
+      <img src="images/sst-screen-3-officer-dashboard.jpg" alt="Officer Panel with unassigned requests on the left and the officer’s assigned requests on the right" loading="lazy">
+      <figcaption><em>UX Decision:</em> Organized the officer dashboard into separate Unassigned Requests and My Assigned Requests sections, highlighted urgent tickets, and provided assignment controls, inline status updates, and remark fields to streamline request triage and management.</figcaption>
+    </figure>
+  </section>
+
+  <section id="s5">
+    <h2>5. Success Metrics &amp; Analytics Framework (Analytical Thinking)</h2>
+    <p>If deployed in a pilot retail bank branch, I would measure success using the following metric hierarchy:</p>
+    <ul>
+      <li><b>North Star Metric: Average End-to-End Request Resolution Time</b> <em>(hours from ticket creation to <code>Completed</code> status).</em></li>
+      <li><b>Primary Adoption &amp; Efficiency Metrics:</b>
+        <ul style="margin-top:9px">
+          <li><b>Repeat Status-Inquiry Reduction (%):</b> Decrease in walk-in/phone status inquiries per 100 submitted requests.</li>
+          <li><b>QR Lookup Engagement Rate (%):</b> Percentage of customers who scan/check their token link at least once before completion.</li>
+          <li><b>Officer Triage SLA (%):</b> Percentage of incoming requests assigned within 2 hours of submission.</li>
+        </ul>
+      </li>
+      <li><b>Guardrail Metric: Ticket Re-Open / Rejection Rate</b> <em>(ensures officers aren’t prematurely marking tickets <code>Completed</code> just to game resolution time).</em></li>
+    </ul>
+  </section>
+
+  <section id="s6">
+    <h2>6. Post-Hackathon Reflection &amp; v2 Roadmap</h2>
+    <ul>
+      <li><b>Key Learning:</b> Building both sides of an operational workflow taught me that <b>internal tool UX (officer dashboard)</b> is just as critical as customer UX—if officers find updating statuses slow, customer tracking breaks down.</li>
+      <li><b>v2 Roadmap (Next Iteration):</b>
+        <ol style="margin-top:9px">
+          <li><b>Automated SMS/WhatsApp Webhooks</b> triggered automatically when status shifts to <code>Completed</code> or <code>Action Required</code>.</li>
+          <li><b>SLA Aging Alerts</b> highlighting tickets sitting in <code>Received</code> for &gt;24 hours.</li>
+          <li><b>Branch Analytics View</b> tracking bottleneck request types across tellers.</li>
+        </ol>
+      </li>
+    </ul>
+  </section>
+
+  <nav class="project-nav" aria-label="Project pagination">
+    <a href="leadership.html" class="project-nav-item prev">
+      <span class="project-nav-label">← Previous Showcase</span>
+      <span class="project-nav-title">Leadership &amp; Communication</span>
+    </a>
+    <a href="index.html#projects" class="project-nav-all">All Case Studies</a>
+    <a href="phishguard.html" class="project-nav-item next">
+      <span class="project-nav-label">Next Case Study →</span>
+      <span class="project-nav-title">PhishGuard</span>
+    </a>
+  </nav>
+
+</div></div></main>
+
+<div id="lightbox-modal" class="lightbox-modal" role="dialog" aria-modal="true" aria-label="Screenshot preview">
+  <button id="lightbox-close" class="lightbox-close" aria-label="Close enlarged screenshot">&times;</button>
+  <div class="lightbox-content">
+    <img id="lightbox-img" class="lightbox-img" src="" alt="">
+    <div id="lightbox-caption" class="lightbox-caption"></div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
