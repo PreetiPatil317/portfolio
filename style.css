@@ -1,6 +1,6 @@
 /* ==========================================================================
    Preeti Patil - Portfolio Shared Stylesheet
-   Fonts: Figtree (sans-serif) & Literata (serif)
+   Typography: Figtree for all text (headings, body, UI). Monospace for code chips.
    Themes: Light & Dark mode via CSS variables & prefers-color-scheme
    ========================================================================== */
 
@@ -56,6 +56,8 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: calc(44px + env(safe-area-inset-top, 0px));
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 *, *::before, *::after {
@@ -66,9 +68,13 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--ink);
-  font-family: Literata, Georgia, "Times New Roman", serif;
+  font-family: Figtree, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   font-size: 17px;
   line-height: 1.65;
+  text-align: left;
+  max-width: 100%;
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
 }
 
 a {
@@ -81,81 +87,88 @@ a {
   border-radius: 4px;
 }
 
-h1, h2, h3, nav, .pill, .btn, .chip, .go, .k, .sans, .sans-label, .bar b, .top-bar b, .project-nav {
-  font-family: Figtree, "Segoe UI", Helvetica, Arial, sans-serif;
+h1, h2, h3, h4, nav, .pill, .btn, .chip, .go, .k, .sans, .sans-label, .bar b, .top-bar b, .project-nav, .meta b, th, td:first-child {
+  font-family: Figtree, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+h1, h2, h3, h4 {
+  text-wrap: balance;
+  text-align: left;
+}
+
+p, li, figcaption, .fl, .lede, .vp {
+  text-wrap: pretty;
+  text-align: left;
+}
+
+p {
+  max-width: 70ch;
+  margin: 0 0 14px;
+  overflow-wrap: break-word;
 }
 
 /* ==========================================================================
-   Home Page Layout (.w) & Case Study Layout (.wrap)
+   Page Containers & Common Layout
    ========================================================================== */
 .w {
   max-width: 1160px;
   margin: 0 auto;
   padding: 0 32px;
+  min-width: 0;
+  box-sizing: border-box;
 }
 
 .wrap {
-  max-width: 1200px;
+  max-width: 1160px;
   margin: 0 auto;
-  padding: 40px 36px 100px;
+  padding: 0 32px 100px;
+  min-width: 0;
+  box-sizing: border-box;
 }
 
-/* Top Navigation Bar */
-.bar, .top-bar {
+/* Top Navigation Bar - Identical Across All Pages */
+.bar {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
   padding: 22px 0;
   position: relative;
+  min-width: 0;
 }
 
-.top-bar {
+.case-study-bar {
   border-bottom: 1px solid var(--line);
   margin-bottom: 34px;
-  padding-bottom: 18px;
 }
 
-.bar b, .top-bar b {
+.bar b {
   font-weight: 700;
   font-size: 1.05rem;
+  white-space: nowrap;
 }
 
-.bar b a, .top-bar b a {
+.bar b a {
   text-decoration: none;
   color: var(--ink);
 }
 
-.bar nav, .top-bar nav {
+.bar nav {
   display: flex;
   align-items: center;
   gap: 26px;
   font-size: .95rem;
 }
 
-.bar nav a, .top-bar nav a {
+.bar nav a {
   text-decoration: none;
   color: var(--muted);
   transition: color .15s ease;
+  white-space: nowrap;
 }
 
-.bar nav a:hover, .top-bar nav a:hover {
+.bar nav a:hover {
   color: var(--ink);
-}
-
-.back-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  color: var(--accent);
-  text-decoration: none;
-  font-weight: 600;
-  font-size: .95rem;
-  font-family: Figtree, "Segoe UI", Arial, sans-serif;
-}
-
-.back-link:hover {
-  text-decoration: underline;
 }
 
 /* Mobile Hamburger Toggle */
@@ -169,7 +182,7 @@ h1, h2, h3, nav, .pill, .btn, .chip, .go, .k, .sans, .sans-label, .bar b, .top-b
   font-size: 1.2rem;
   cursor: pointer;
   line-height: 1;
-  font-family: system-ui, sans-serif;
+  font-family: inherit;
   align-items: center;
   justify-content: center;
 }
@@ -179,13 +192,14 @@ h1, h2, h3, nav, .pill, .btn, .chip, .go, .k, .sans, .sans-label, .bar b, .top-b
   border-color: var(--accent);
 }
 
-/* Home Hero Section */
+/* Hero Section */
 .hero {
   display: grid;
   grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
   gap: 56px;
-  align-items: end;
-  padding: 64px 0 56px;
+  align-items: center; /* Vertically centered */
+  padding: 56px 0 56px;
+  min-width: 0;
 }
 
 .wrap .hero {
@@ -201,23 +215,23 @@ h1, h2, h3, nav, .pill, .btn, .chip, .go, .k, .sans, .sans-label, .bar b, .top-b
 }
 
 h1 {
-  font-size: clamp(3rem, 8.4vw, 6.2rem);
-  line-height: .98;
+  font-size: clamp(2.4rem, 6.5vw, 5.2rem);
+  line-height: 1.05;
   letter-spacing: -.035em;
-  margin: 0 0 22px;
+  margin: 0 0 20px;
   font-weight: 800;
+  overflow-wrap: break-word;
 }
 
 .wrap h1 {
-  font-size: clamp(2.1rem, 5vw, 3.4rem);
-  line-height: 1.12;
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  line-height: 1.15;
   letter-spacing: -.02em;
   margin: 0 0 14px;
   font-weight: 700;
 }
 
 .role {
-  font-family: Figtree, "Segoe UI", Arial, sans-serif;
   font-size: 1.25rem;
   font-weight: 600;
   color: var(--accent);
@@ -226,23 +240,22 @@ h1 {
 
 .byline {
   color: var(--muted);
-  margin: 0 0 30px;
+  margin: 0 0 24px;
   font-size: 1.02rem;
 }
 
 .sub {
-  font-family: Figtree, "Segoe UI", Arial, sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   font-weight: 600;
-  line-height: 1.4;
+  line-height: 1.45;
   margin: 0;
   color: var(--accent);
 }
 
 .vp {
-  font-size: 1.25rem;
-  line-height: 1.55;
-  max-width: 34ch;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  max-width: 60ch;
   margin: 0 0 26px;
 }
 
@@ -262,6 +275,7 @@ h1 {
   border: 1.5px solid var(--ink);
   color: var(--ink);
   transition: all .15s ease;
+  white-space: nowrap;
 }
 
 .btn:hover {
@@ -285,6 +299,7 @@ h1 {
   margin: 16px 0 0;
   color: var(--muted);
   font-size: .95rem;
+  overflow-wrap: break-word;
 }
 
 .pills {
@@ -301,7 +316,7 @@ h1 {
   border-radius: 12px;
   padding: 16px 18px;
   font-size: .97rem;
-  line-height: 1.45;
+  line-height: 1.5;
 }
 
 .pill b {
@@ -322,6 +337,8 @@ h1 {
   border-radius: 6px;
   padding: 6px 20px;
   margin: 0 0 20px;
+  overflow-wrap: break-word;
+  min-width: 0;
 }
 
 .meta p {
@@ -330,6 +347,7 @@ h1 {
   border-bottom: 1px solid var(--line);
   font-size: .98rem;
   line-height: 1.55;
+  max-width: none;
 }
 
 .meta p:last-child {
@@ -337,7 +355,6 @@ h1 {
 }
 
 .meta b {
-  font-family: Figtree, "Segoe UI", Arial, sans-serif;
   font-weight: 600;
 }
 
@@ -345,6 +362,7 @@ h1 {
 section {
   padding: 56px 0;
   border-top: 1px solid var(--line);
+  min-width: 0;
 }
 
 .wrap section {
@@ -354,29 +372,25 @@ section {
 }
 
 h2 {
-  font-size: clamp(1.7rem, 3.4vw, 2.3rem);
+  font-size: clamp(1.6rem, 3.2vw, 2.2rem);
   letter-spacing: -.02em;
-  line-height: 1.15;
-  margin: 0 0 8px;
+  line-height: 1.2;
+  margin: 0 0 10px;
   font-weight: 700;
 }
 
 .wrap h2 {
-  font-size: 1.6rem;
-  line-height: 1.25;
+  font-size: 1.55rem;
+  line-height: 1.3;
   letter-spacing: -.01em;
   margin: 0 0 14px;
   font-weight: 700;
 }
 
 h3 {
-  font-size: 1.12rem;
-  margin: 26px 0 8px;
+  font-size: 1.15rem;
+  margin: 26px 0 10px;
   font-weight: 600;
-}
-
-p {
-  margin: 0 0 14px;
 }
 
 ol, ul {
@@ -386,6 +400,7 @@ ol, ul {
 
 li {
   margin-bottom: 9px;
+  line-height: 1.6;
 }
 
 li::marker {
@@ -395,26 +410,33 @@ li::marker {
 .lede {
   color: var(--muted);
   margin: 0 0 30px;
-  max-width: 60ch;
+  max-width: 70ch;
+  line-height: 1.6;
 }
 
-/* Cards Grid on Home Page */
+/* ==========================================================================
+   Home Page 3-Project Card Grid (Aligned "Read the case study" links)
+   ========================================================================== */
 .grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 22px;
+  min-width: 0;
 }
 
 .card {
   display: flex;
   flex-direction: column;
+  height: 100%;
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: 14px;
-  padding: 26px 26px 22px;
+  padding: 24px;
   text-decoration: none;
   color: inherit;
   transition: border-color .2s, transform .2s, box-shadow .2s;
+  min-width: 0;
+  box-sizing: border-box;
 }
 
 .card:hover {
@@ -431,18 +453,18 @@ li::marker {
   margin-bottom: 18px;
   border: 1px solid var(--line);
   background: var(--chip);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
 }
 
 .card-thumb img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain; /* Whole screenshot visible, nothing cut off */
   display: block;
-  transition: transform .25s ease;
-}
-
-.card:hover .card-thumb img {
-  transform: scale(1.02);
+  background: var(--chip);
 }
 
 .tags {
@@ -462,16 +484,17 @@ li::marker {
 }
 
 .card h3 {
-  font-size: 1.45rem;
-  line-height: 1.2;
+  font-size: 1.35rem;
+  line-height: 1.25;
   margin: 0 0 10px;
   letter-spacing: -.01em;
 }
 
 .card p {
   margin: 0 0 12px;
-  font-size: .98rem;
+  font-size: .95rem;
   line-height: 1.6;
+  max-width: none;
 }
 
 .k {
@@ -480,19 +503,20 @@ li::marker {
 
 .card .meta {
   color: var(--muted);
-  font-size: .9rem;
-  margin-top: auto;
-  padding-top: 6px;
+  font-size: .88rem;
+  margin-top: auto; /* Aligns footer elements to bottom */
+  padding-top: 10px;
   background: transparent;
   border: none;
   padding-left: 0;
   padding-right: 0;
+  margin-bottom: 0;
 }
 
 .go {
   font-weight: 600;
   color: var(--accent);
-  margin-top: 8px;
+  margin-top: 12px;
   border-top: 1px solid var(--line);
   padding-top: 14px;
   display: block;
@@ -503,12 +527,25 @@ li::marker {
 }
 
 /* Home Leadership Section */
+.lead-link {
+  display: inline-block;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+  margin-left: 4px;
+}
+
+.lead-link:hover {
+  text-decoration: underline;
+}
+
 .lead > div {
   display: grid;
   grid-template-columns: 230px minmax(0, 1fr);
   gap: 32px;
   padding: 24px 0;
   border-bottom: 1px solid var(--line);
+  min-width: 0;
 }
 
 .lead > div:last-child {
@@ -523,7 +560,6 @@ li::marker {
 
 .lead small {
   display: block;
-  font-family: Figtree, "Segoe UI", Arial, sans-serif;
   color: var(--muted);
   font-size: .88rem;
   font-weight: 500;
@@ -541,11 +577,13 @@ li::marker {
   grid-template-columns: repeat(3, 1fr);
   gap: 22px;
   margin-top: 26px;
+  min-width: 0;
 }
 
 .three div {
   border-left: 3px solid var(--accent);
   padding: 4px 0 4px 20px;
+  min-width: 0;
 }
 
 .three h3 {
@@ -558,29 +596,52 @@ li::marker {
   font-size: .98rem;
 }
 
-/* Home Footer & Skills */
+/* ==========================================================================
+   Home Skills & Education Section (4 Structured Skill Groups)
+   ========================================================================== */
 .foot {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.2fr 1fr;
   gap: 44px;
+  min-width: 0;
 }
 
 .foot h3 {
-  font-size: 1.1rem;
-  margin: 0 0 12px;
+  font-size: 1.15rem;
+  margin: 0 0 16px;
+}
+
+.skills-groups {
+  display: grid;
+  gap: 16px;
+  margin-bottom: 30px;
+}
+
+.skill-group {
+  min-width: 0;
+}
+
+.skill-heading {
+  font-size: .9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  color: var(--muted);
+  margin: 0 0 8px;
 }
 
 .chips {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin: 0 0 30px;
 }
 
 .chips .chip {
   background: var(--surface);
   border: 1px solid var(--line);
   color: var(--ink);
+  font-size: .85rem;
+  padding: 5px 12px;
 }
 
 .foot ul {
@@ -593,10 +654,6 @@ li::marker {
   font-size: .97rem;
 }
 
-.foot li::marker {
-  color: var(--accent);
-}
-
 .end {
   padding: 34px 0 60px;
   border-top: 1px solid var(--line);
@@ -606,20 +663,23 @@ li::marker {
   flex-wrap: wrap;
   gap: 8px 24px;
   justify-content: space-between;
+  overflow-wrap: break-word;
 }
 
 .end a {
   color: inherit;
+  word-break: break-all;
 }
 
 /* ==========================================================================
-   Case Study Specific Components (Rail, Personas, Tables, Figures)
+   Case Study Layout & Components (Rail, Personas, Tables, Figures)
    ========================================================================== */
 .layout {
   display: grid;
   grid-template-columns: 210px minmax(0, 1fr);
   gap: 56px;
   margin-top: 20px;
+  min-width: 0;
 }
 
 .rail {
@@ -627,7 +687,6 @@ li::marker {
   top: calc(28px + env(safe-area-inset-top, 0px));
   align-self: start;
   padding-top: 34px;
-  font-family: Figtree, "Segoe UI", Arial, sans-serif;
   font-size: .93rem;
 }
 
@@ -653,6 +712,7 @@ li::marker {
 
 .content {
   max-width: 860px;
+  min-width: 0;
 }
 
 .content section:first-child {
@@ -664,6 +724,7 @@ li::marker {
   grid-template-columns: 1fr 1fr;
   gap: 20px;
   margin: 18px 0;
+  min-width: 0;
 }
 
 .personas .persona {
@@ -676,6 +737,7 @@ li::marker {
   border-radius: 6px;
   padding: 4px 22px 10px;
   margin: 18px 0;
+  min-width: 0;
 }
 
 .persona h3 {
@@ -683,7 +745,7 @@ li::marker {
 }
 
 code {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   font-size: .84em;
   background: var(--chip);
   padding: 2px 7px;
@@ -691,18 +753,24 @@ code {
   color: var(--accent);
 }
 
+/* Responsive Table Wrapper - Scrolls Inside Its Own Box */
 .scroll {
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
   border: 1px solid var(--line);
   border-radius: 6px;
   background: var(--surface);
   margin: 16px 0;
+  max-width: 100%;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
 }
 
 table {
   border-collapse: collapse;
   width: 100%;
-  min-width: 640px;
+  min-width: 560px;
   font-size: .93rem;
   line-height: 1.5;
 }
@@ -715,7 +783,6 @@ th, td {
 }
 
 th {
-  font-family: Figtree, "Segoe UI", Arial, sans-serif;
   font-weight: 600;
   background: var(--chip);
 }
@@ -726,7 +793,6 @@ tr:last-child td {
 
 td:first-child {
   font-weight: 600;
-  font-family: Figtree, "Segoe UI", Arial, sans-serif;
 }
 
 .shipped {
@@ -741,6 +807,7 @@ td:first-child {
 
 figure {
   margin: 26px 0 8px;
+  min-width: 0;
 }
 
 figure img {
@@ -751,20 +818,27 @@ figure img {
   border: 1px solid var(--line);
   cursor: zoom-in;
   transition: transform .2s ease, box-shadow .2s ease;
+  box-sizing: border-box;
 }
 
 figure img:hover {
   box-shadow: 0 4px 16px rgba(67, 56, 202, 0.12);
 }
 
-figcaption {
+figcaption, .fl {
   font-size: .97rem;
   margin-top: 12px;
+  line-height: 1.6;
+  max-width: 70ch;
 }
 
-figcaption em {
+figcaption em, .fl em {
   color: var(--accent);
   font-style: italic;
+  font-weight: 600;
+}
+
+figcaption b, .fl b {
   font-weight: 600;
 }
 
@@ -772,18 +846,26 @@ figcaption em {
   margin-top: 40px;
 }
 
+/* PhishGuard Screen 2: Evenly Spaced Sequence at the Same Width */
 .figs {
   display: grid;
-  gap: 14px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 26px 0 8px;
+  min-width: 0;
 }
 
 .figs figure {
   margin: 0;
+  min-width: 0;
 }
 
-.fl {
-  font-size: .95rem;
-  margin: 10px 0 0;
+.figs img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+  background: var(--surface);
 }
 
 .fr {
@@ -820,6 +902,7 @@ figcaption em {
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
   gap: 16px;
+  min-width: 0;
 }
 
 .project-nav-item {
@@ -831,6 +914,7 @@ figcaption em {
   border-radius: 8px;
   border: 1px solid transparent;
   transition: all .15s ease;
+  min-width: 0;
 }
 
 .project-nav-item:hover {
@@ -861,6 +945,9 @@ figcaption em {
   font-size: 1rem;
   font-weight: 600;
   color: var(--accent);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .project-nav-all {
@@ -900,6 +987,7 @@ figcaption em {
   cursor: zoom-out;
   opacity: 0;
   transition: opacity .2s ease;
+  box-sizing: border-box;
 }
 
 .lightbox-modal.active {
@@ -928,11 +1016,10 @@ figcaption em {
 .lightbox-caption {
   margin-top: 14px;
   color: #ECEDF6;
-  font-family: Literata, Georgia, serif;
   font-size: .95rem;
   text-align: center;
   max-width: 700px;
-  line-height: 1.45;
+  line-height: 1.5;
 }
 
 .lightbox-close {
@@ -952,7 +1039,7 @@ figcaption em {
   align-items: center;
   justify-content: center;
   transition: background .15s ease;
-  font-family: system-ui, sans-serif;
+  font-family: inherit;
 }
 
 .lightbox-close:hover {
@@ -960,7 +1047,7 @@ figcaption em {
 }
 
 /* ==========================================================================
-   Responsive Breakpoints & Mobile Nav
+   Responsive Breakpoints & Mobile Optimization (Down to 360px & Below)
    ========================================================================== */
 @media (max-width: 980px) {
   .wrap .hero {
@@ -982,9 +1069,12 @@ figcaption em {
   .hero {
     grid-template-columns: 1fr;
     gap: 34px;
-    padding-top: 40px;
+    padding-top: 36px;
   }
-  .grid, .three, .foot {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .three, .foot {
     grid-template-columns: 1fr;
   }
   .lead > div {
@@ -1015,6 +1105,7 @@ figcaption em {
   .bar nav a {
     padding: 8px 12px;
     border-radius: 6px;
+    width: 100%;
   }
   .bar nav a:hover {
     background: var(--chip);
@@ -1031,15 +1122,24 @@ figcaption em {
   }
 }
 
+@media (max-width: 768px) {
+  .figs {
+    grid-template-columns: 1fr;
+  }
+  .figs img {
+    aspect-ratio: auto;
+  }
+}
+
 @media (max-width: 520px) {
   body {
     font-size: 16px;
   }
-  .w {
-    padding: 0 20px;
+  .w, .wrap {
+    padding: 0 16px 60px;
   }
-  .wrap {
-    padding: 24px 20px 80px;
+  .bar {
+    padding: 16px 0;
   }
   .btn {
     padding: 10px 14px;
@@ -1051,6 +1151,21 @@ figcaption em {
   .project-nav-item.next {
     grid-column: 1;
     text-align: left;
+  }
+  .hero {
+    padding: 24px 0 36px;
+  }
+  h1 {
+    font-size: 2.2rem;
+  }
+  .wrap h1 {
+    font-size: 1.85rem;
+  }
+  .contact {
+    flex-direction: column;
+  }
+  .contact .btn {
+    text-align: center;
   }
 }
 
