@@ -4,41 +4,25 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Smart Service Tracker | PRD &amp; MVP Case Study | Preeti Patil</title>
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
 <meta name="description" content="Smart Service Tracker: Two-Sided Banking Queue &amp; Request Management MVP">
-<meta property="og:title" content="Smart Service Tracker | PRD &amp; MVP Case Study | Preeti Patil">
-<meta property="og:description" content="Smart Service Tracker: Two-Sided Banking Queue &amp; Request Management MVP">
-<meta property="og:type" content="article">
-<meta property="og:image" content="https://preetipatil317.github.io/portfolio/images/card-sst.jpg">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Smart Service Tracker | PRD &amp; MVP Case Study | Preeti Patil">
-<meta name="twitter:description" content="Smart Service Tracker: Two-Sided Banking Queue &amp; Request Management MVP">
-<meta name="twitter:image" content="https://preetipatil317.github.io/portfolio/images/card-sst.jpg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<meta property="og:type" content="website"><meta property="og:title" content="Smart Service Tracker | PRD &amp; MVP Case Study | Preeti Patil"><meta property="og:description" content="Smart Service Tracker: Two-Sided Banking Queue &amp; Request Management MVP"><meta property="og:url" content="https://preetipatil317.github.io/portfolio/smart-service-tracker.html"><meta property="og:image" content="https://preetipatil317.github.io/portfolio/images/sst-screen-1-intake.jpg">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Smart Service Tracker | PRD &amp; MVP Case Study | Preeti Patil"><meta name="twitter:description" content="Smart Service Tracker: Two-Sided Banking Queue &amp; Request Management MVP"><meta name="twitter:image" content="https://preetipatil317.github.io/portfolio/images/sst-screen-1-intake.jpg">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div id="reading-progress"></div>
-<main class="wrap">
-  <div class="bar case-study-bar">
-    <b><a href="index.html">Preeti Patil</a></b>
-    <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
-    <nav aria-label="Primary">
-      <a href="index.html#projects">Projects</a>
-      <a href="index.html#leadership">Leadership</a>
-      <a href="index.html#approach">How I think</a>
-      <a href="index.html#about">Skills &amp; education</a>
-    </nav>
-  </div>
-
-  <header class="hero"><div><h1>PRD &amp; MVP Case Study: Smart Service Tracker</h1><p class="byline">MCA Graduate &amp; Full-Stack Builder transitioning into Product Management.</p><p class="sub">Smart Service Tracker: Two-Sided Banking Queue &amp; Request Management MVP</p></div><div class="meta">
+<div id="progress"></div>
+<div class="barwrap"><div class="w bar"><a class="name" href="index.html">Preeti Patil</a><nav class="nav" aria-label="Primary"><a href="index.html">Back to portfolio</a><button class="tbtn" type="button" aria-label="Switch light or dark theme">Theme</button></nav></div></div>
+<main class="w">
+<header class="hero"><div><h1>PRD &amp; MVP Case Study: Smart Service Tracker</h1><p class="byline">MCA Graduate &amp; Full-Stack Builder transitioning into Product Management.</p><p class="sub">Smart Service Tracker: Two-Sided Banking Queue &amp; Request Management MVP</p></div><div class="meta">
     <p><b>Role:</b> Product Lead &amp; Full-Stack Developer (Team InitX — 2-Person Sprint)</p>
     <p><b>Timeline:</b> 6-Hour Build &amp; Live Pitch (Code Flash Hackathon 2025, KLE Institute of Technology)</p>
     <p><b>Tech Stack:</b> PHP, MySQL, Bootstrap 5, JavaScript, QR Code Generation</p>
     <p><b>Code Repository:</b> <span class="gh">GitHub — Smart Service Tracker</span></p>
-  </div></header><div class="layout"><nav class="rail" aria-label="Sections">
+  </div></header>
+<div class="layout"><nav class="rail" aria-label="Sections">
 <a href="#s1">Problem Discovery</a><a href="#s2">Personas &amp; User Stories</a><a href="#s3">MVP Scope &amp; Trade-Offs</a><a href="#s4">UX Flow &amp; Screens</a><a href="#s5">Success Metrics</a><a href="#s6">Reflection &amp; v2 Roadmap</a></nav><div class="content">
 
   <section id="s1">
@@ -61,7 +45,7 @@
       <ul>
         <li><b>Goal:</b> Submit a service request once, leave the branch quickly, and check live progress from his phone.</li>
         <li><b>User Stories:</b>
-          <ul style="margin-top:9px">
+          <ul>
             <li><em>As a customer,</em> I want to submit a service request and upload supporting documents digitally so I don’t lose paper forms.</li>
             <li><em>As a customer,</em> I want an instant unique token and scannable QR code upon submission so I can check my status anytime without calling the branch.</li>
             <li><em>As a customer,</em> I want to read officer remarks on my ticket so I know immediately if further action is needed.</li>
@@ -74,7 +58,7 @@
       <ul>
         <li><b>Goal:</b> View all incoming requests in one place, prioritize urgent tickets, and reduce counter interruptions.</li>
         <li><b>User Stories:</b>
-          <ul style="margin-top:9px">
+          <ul>
             <li><em>As an officer,</em> I want to filter unassigned and urgent requests so I can triage high-priority tickets first.</li>
             <li><em>As an officer,</em> I want to self-assign tickets and update status stages (<code>Received</code> → <code>In Progress</code> → <code>Completed</code>) with remarks so customers stop interrupting my desk for status checks.</li>
           </ul>
@@ -129,7 +113,7 @@
     <ul>
       <li><b>North Star Metric: Average End-to-End Request Resolution Time</b> <em>(hours from ticket creation to <code>Completed</code> status).</em></li>
       <li><b>Primary Adoption &amp; Efficiency Metrics:</b>
-        <ul style="margin-top:9px">
+        <ul>
           <li><b>Repeat Status-Inquiry Reduction (%):</b> Decrease in walk-in/phone status inquiries per 100 submitted requests.</li>
           <li><b>QR Lookup Engagement Rate (%):</b> Percentage of customers who scan/check their token link at least once before completion.</li>
           <li><b>Officer Triage SLA (%):</b> Percentage of incoming requests assigned within 2 hours of submission.</li>
@@ -144,7 +128,7 @@
     <ul>
       <li><b>Key Learning:</b> Building both sides of an operational workflow taught me that <b>internal tool UX (officer dashboard)</b> is just as critical as customer UX—if officers find updating statuses slow, customer tracking breaks down.</li>
       <li><b>v2 Roadmap (Next Iteration):</b>
-        <ol style="margin-top:9px">
+        <ol>
           <li><b>Automated SMS/WhatsApp Webhooks</b> triggered automatically when status shifts to <code>Completed</code> or <code>Action Required</code>.</li>
           <li><b>SLA Aging Alerts</b> highlighting tickets sitting in <code>Received</code> for &gt;24 hours.</li>
           <li><b>Branch Analytics View</b> tracking bottleneck request types across tellers.</li>
@@ -152,29 +136,7 @@
       </li>
     </ul>
   </section>
-
-  <nav class="project-nav" aria-label="Project pagination">
-    <a href="leadership.html" class="project-nav-item prev">
-      <span class="project-nav-label">← Previous Showcase</span>
-      <span class="project-nav-title">Leadership &amp; Communication</span>
-    </a>
-    <a href="index.html#projects" class="project-nav-all">All Case Studies</a>
-    <a href="phishguard.html" class="project-nav-item next">
-      <span class="project-nav-label">Next Case Study →</span>
-      <span class="project-nav-title">PhishGuard</span>
-    </a>
-  </nav>
-
-</div></div></main>
-
-<div id="lightbox-modal" class="lightbox-modal" role="dialog" aria-modal="true" aria-label="Screenshot preview">
-  <button id="lightbox-close" class="lightbox-close" aria-label="Close enlarged screenshot">&times;</button>
-  <div class="lightbox-content">
-    <img id="lightbox-img" class="lightbox-img" src="" alt="">
-    <div id="lightbox-caption" class="lightbox-caption"></div>
-  </div>
-</div>
-
-<script src="script.js"></script>
-</body>
-</html>
+<nav class="pager" aria-label="Project navigation"><a class="next" href="phishguard.html"><small>Next project</small><b>PhishGuard</b></a></nav><p class="back"><a href="index.html">Back to portfolio</a></p></div></div></main>
+<dialog id="lb" aria-label="Enlarged screenshot"><button type="button">Close</button><img alt=""></dialog>
+<script src="site.js"></script>
+</body></html>

@@ -4,103 +4,64 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>PhishGuard | Trust &amp; Safety PRD &amp; UX Flow | Preeti Patil</title>
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
 <meta name="description" content="PhishGuard: Explainable Phishing Detection &amp; Risk Scoring Web App">
-<meta property="og:title" content="PhishGuard | Trust &amp; Safety PRD &amp; UX Flow | Preeti Patil">
-<meta property="og:description" content="PhishGuard: Explainable Phishing Detection &amp; Risk Scoring Web App">
-<meta property="og:type" content="article">
-<meta property="og:image" content="https://preetipatil317.github.io/portfolio/images/card-sst.jpg">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="PhishGuard | Trust &amp; Safety PRD &amp; UX Flow | Preeti Patil">
-<meta name="twitter:description" content="PhishGuard: Explainable Phishing Detection &amp; Risk Scoring Web App">
-<meta name="twitter:image" content="https://preetipatil317.github.io/portfolio/images/card-sst.jpg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<meta property="og:type" content="website"><meta property="og:title" content="PhishGuard | Trust &amp; Safety PRD &amp; UX Flow | Preeti Patil"><meta property="og:description" content="PhishGuard: Explainable Phishing Detection &amp; Risk Scoring Web App"><meta property="og:url" content="https://preetipatil317.github.io/portfolio/phishguard.html"><meta property="og:image" content="https://preetipatil317.github.io/portfolio/images/sst-screen-1-intake.jpg">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="PhishGuard | Trust &amp; Safety PRD &amp; UX Flow | Preeti Patil"><meta name="twitter:description" content="PhishGuard: Explainable Phishing Detection &amp; Risk Scoring Web App"><meta name="twitter:image" content="https://preetipatil317.github.io/portfolio/images/sst-screen-1-intake.jpg">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div id="reading-progress"></div>
-<main class="wrap">
-  <div class="bar case-study-bar">
-    <b><a href="index.html">Preeti Patil</a></b>
-    <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
-    <nav aria-label="Primary">
-      <a href="index.html#projects">Projects</a>
-      <a href="index.html#leadership">Leadership</a>
-      <a href="index.html#approach">How I think</a>
-      <a href="index.html#about">Skills &amp; education</a>
-    </nav>
-  </div>
+<div id="progress"></div>
+<div class="barwrap"><div class="w bar"><a class="name" href="index.html">Preeti Patil</a><nav class="nav" aria-label="Primary"><a href="index.html">Back to portfolio</a><button class="tbtn" type="button" aria-label="Switch light or dark theme">Theme</button></nav></div></div>
+<main class="w">
+<header class="hero"><div><h1>Trust &amp; Safety PRD &amp; UX Flow: PhishGuard — Phishing Email Detection System</h1><p class="sub">PhishGuard: Explainable Phishing Detection &amp; Risk Scoring Web App</p></div>
+<div class="meta"><p><b>Role:</b> Solo Full-Stack Developer &amp; Product Builder (4-Month Remote Internship Deliverable)</p><p><b>Organization:</b> Edutainer (PAT Technologies Pvt. Ltd.) | Feb 2026 – May 2026</p><p><b>Tech Stack:</b> Python, Flask, RESTful API, React.js, TypeScript</p></div></header>
+<div class="layout"><nav class="rail" aria-label="Sections"><a href="#s1">Problem &amp; User Empathy</a><a href="#s2">Persona &amp; User Stories</a><a href="#s3">Design &amp; Scoping Trade-Offs</a><a href="#s4">UX Flow &amp; Screens</a><a href="#s5">Success Metrics</a><a href="#s6">Learnings &amp; v2 Roadmap</a></nav><div class="content">
 
-  <header class="hero"><div><h1>Trust &amp; Safety PRD &amp; UX Flow: PhishGuard — Phishing Email Detection System</h1><p class="sub">PhishGuard: Explainable Phishing Detection &amp; Risk Scoring Web App</p></div>
-  <div class="meta"><p><b>Role:</b> Solo Full-Stack Developer &amp; Product Builder (4-Month Remote Internship Deliverable)</p><p><b>Organization:</b> Edutainer (PAT Technologies Pvt. Ltd.) | Feb 2026 – May 2026</p><p><b>Tech Stack:</b> Python, Flask, RESTful API, React.js, TypeScript</p></div></header>
-  <div class="layout"><nav class="rail" aria-label="Sections"><a href="#s1">Problem &amp; User Empathy</a><a href="#s2">Persona &amp; User Stories</a><a href="#s3">Design &amp; Scoping Trade-Offs</a><a href="#s4">UX Flow &amp; Screens</a><a href="#s5">Success Metrics</a><a href="#s6">Learnings &amp; v2 Roadmap</a></nav><div class="content">
+<section id="s1"><h2>1. Problem Statement &amp; User Empathy</h2>
+<p>Everyday email users—especially students, elderly family members, and non-technical employees—struggle to tell legitimate urgent alerts apart from sophisticated phishing scams.</p>
+<h3>Core User Pain Points</h3>
+<ol>
+<li><b>Binary “Black-Box” Warnings:</b> Traditional spam filters either block an email silently or show a generic warning banner without explaining <em>why</em> an email is risky, leaving users unsure whether to trust it.</li>
+<li><b>Decision Paralysis Under Urgency:</b> Phishing attacks exploit artificial urgency (e.g., <em>“Account suspended in 24 hours”</em>), pressuring users into clicking malicious links before verifying the sender domain.</li>
+<li><b>Lack of Safe Practice Tools:</b> Non-technical users rarely have a risk-free sandbox to test suspicious messages and learn how to spot common red flags.</li></ol></section>
 
-  <section id="s1"><h2>1. Problem Statement &amp; User Empathy</h2>
-  <p>Everyday email users—especially students, elderly family members, and non-technical employees—struggle to tell legitimate urgent alerts apart from sophisticated phishing scams.</p>
-  <h3>Core User Pain Points</h3>
-  <ol>
-  <li><b>Binary “Black-Box” Warnings:</b> Traditional spam filters either block an email silently or show a generic warning banner without explaining <em>why</em> an email is risky, leaving users unsure whether to trust it.</li>
-  <li><b>Decision Paralysis Under Urgency:</b> Phishing attacks exploit artificial urgency (e.g., <em>“Account suspended in 24 hours”</em>), pressuring users into clicking malicious links before verifying the sender domain.</li>
-  <li><b>Lack of Safe Practice Tools:</b> Non-technical users rarely have a risk-free sandbox to test suspicious messages and learn how to spot common red flags.</li></ol></section>
+<section id="s2"><h2>2. Target User Persona &amp; User Stories</h2>
+<div class="persona"><h3>Persona: Non-Technical Everyday Email User (“Ananya, 28 — Operations Executive”)</h3>
+<ul><li><b>Goal:</b> Quickly verify whether an unexpected email is safe before clicking a link or entering credentials, and understand <em>what</em> makes it suspicious in plain English.</li>
+<li><b>User Stories:</b><ul>
+<li><em>As a user,</em> I want to paste an email’s sender, subject, and body into one clean screen and get an instant risk score so I know whether to trust it.</li>
+<li><em>As a user,</em> I want specific, plain-English red flags (such as spoofed domains or credential requests) highlighted so I understand the exact threat.</li>
+<li><em>As a first-time visitor,</em> I want one-click sample emails so I can test how the tool works immediately without searching my inbox.</li></ul></li></ul></div></section>
 
-  <section id="s2"><h2>2. Target User Persona &amp; User Stories</h2>
-  <div class="persona"><h3>Persona: Non-Technical Everyday Email User (“Ananya, 28 — Operations Executive”)</h3>
-  <ul><li><b>Goal:</b> Quickly verify whether an unexpected email is safe before clicking a link or entering credentials, and understand <em>what</em> makes it suspicious in plain English.</li>
-  <li><b>User Stories:</b><ul style="margin-top:9px">
-  <li><em>As a user,</em> I want to paste an email’s sender, subject, and body into one clean screen and get an instant risk score so I know whether to trust it.</li>
-  <li><em>As a user,</em> I want specific, plain-English red flags (such as spoofed domains or credential requests) highlighted so I understand the exact threat.</li>
-  <li><em>As a first-time visitor,</em> I want one-click sample emails so I can test how the tool works immediately without searching my inbox.</li></ul></li></ul></div></section>
+<section id="s3"><h2>3. Product Design &amp; Scoping Trade-Offs (Execution Readiness)</h2>
+<p>Building the entire stack solo over a 4-month remote internship required balancing detection clarity, latency, and maintainability:</p>
+<div class="scroll" role="region" aria-label="Design trade-offs table" tabindex="0"><table><thead><tr><th>Design Choice</th><th>Option Chosen</th><th>Alternative Rejected</th><th>Product Rationale (Trade-Off)</th></tr></thead><tbody>
+<tr><td>Detection Engine</td><td><b>Weighted Heuristic Scoring (</b><code>0-100</code><b>)</b></td><td>Black-box Deep Learning / LLM API</td><td>Heuristics run in milliseconds with zero external API cost and produce deterministic, human-readable explanations for every point added.</td></tr>
+<tr><td>Risk Output</td><td><b>3 Color-Coded Tiers (</b><code>Safe</code>, <code>Suspicious</code>, <code>Dangerous</code><b>) + Score</b></td><td>Simple <code>Safe / Spam</code> binary toggle</td><td>Real-world emails fall into gray areas; a <code>Suspicious</code> middle tier warns users to verify out-of-band without causing alert fatigue on normal emails.</td></tr>
+<tr><td>Authentication</td><td><b>Zero-Login Open Web App</b></td><td>User accounts &amp; inbox OAuth sync</td><td>Avoids privacy concerns around reading private inboxes while keeping testing friction near zero.</td></tr></tbody></table></div></section>
 
-  <section id="s3"><h2>3. Product Design &amp; Scoping Trade-Offs (Execution Readiness)</h2>
-  <p>Building the entire stack solo over a 4-month remote internship required balancing detection clarity, latency, and maintainability:</p>
-  <div class="scroll" role="region" aria-label="Design trade-offs table" tabindex="0"><table><thead><tr><th>Design Choice</th><th>Option Chosen</th><th>Alternative Rejected</th><th>Product Rationale (Trade-Off)</th></tr></thead><tbody>
-  <tr><td>Detection Engine</td><td><b>Weighted Heuristic Scoring (</b><code>0-100</code><b>)</b></td><td>Black-box Deep Learning / LLM API</td><td>Heuristics run in milliseconds with zero external API cost and produce deterministic, human-readable explanations for every point added.</td></tr>
-  <tr><td>Risk Output</td><td><b>3 Color-Coded Tiers (</b><code>Safe</code>, <code>Suspicious</code>, <code>Dangerous</code><b>) + Score</b></td><td>Simple <code>Safe / Spam</code> binary toggle</td><td>Real-world emails fall into gray areas; a <code>Suspicious</code> middle tier warns users to verify out-of-band without causing alert fatigue on normal emails.</td></tr>
-  <tr><td>Authentication</td><td><b>Zero-Login Open Web App</b></td><td>User accounts &amp; inbox OAuth sync</td><td>Avoids privacy concerns around reading private inboxes while keeping testing friction near zero.</td></tr></tbody></table></div></section>
+<section id="s4" class="screen"><h2>4. UX Flow &amp; Annotated Screens</h2>
+<h3>Screen 1: Frictionless Input &amp; One-Click Sample Onboarding</h3>
+<figure><img src="images/pg-screen-1-input.jpg" alt="PhishGuard empty input screen with sample buttons and Analyze This Email button" loading="lazy"><figcaption><em>UX Decision:</em> Placed dedicated <b>“Load Phishing Example”</b> and <b>“Load Safe Example”</b> buttons directly above the input fields so first-time users can test both detection extremes immediately without hunting for sample text.</figcaption></figure>
+<h3>Screen 2: High-Risk Detection (<code>100/100 Dangerous</code>) &amp; Explainable Red Flags</h3>
+<div class="figs"><figure><img src="images/pg-screen-2-phishing-input.jpg" alt="PhishGuard with a phishing email pasted in" loading="lazy"></figure><figure><img src="images/pg-screen-2-dangerous-flags.jpg" alt="Dangerous result with risk score 100 out of 100 and the first red flags" loading="lazy"></figure><figure><img src="images/pg-screen-2-remaining-flags.jpg" alt="Remaining red flags including suspicious URL and spoofed sender domain" loading="lazy"></figure></div>
+<p class="fl"><b>UX Decision:</b> Paired a high-contrast red <code>Dangerous (100/100)</code> risk badge with an itemized list of plain-English red flags (e.g., spoofed sender domain <code>paypa1.com</code>, suspicious <code>.xyz</code> URL, urgent threat language) and clear next-step guidance (<em>“Do NOT click any links”</em>).</p>
+<h3>Screen 3: Safe Verification (<code>0/100 Safe</code>) with Responsible Guardrail Copy</h3>
+<figure><img src="images/pg-screen-3-safe-result.jpg" alt="Safe result with risk score 0 out of 100 for a Medium newsletter email" loading="lazy"><figcaption><b>UX Decision:</b> Displayed a clear green <code>Safe (0/100)</code> confirmation while intentionally including responsible guardrail copy (<em>“Still always be careful with unexpected emails!”</em>) to prevent false overconfidence on novel social engineering attacks.</figcaption></figure></section>
 
-  <section id="s4" class="screen"><h2>4. UX Flow &amp; Annotated Screens</h2>
-  <h3>Screen 1: Frictionless Input &amp; One-Click Sample Onboarding</h3>
-  <figure><img src="images/pg-screen-1-input.jpg" alt="PhishGuard empty input screen with sample buttons and Analyze This Email button" loading="lazy"><figcaption><em>UX Decision:</em> Placed dedicated <b>“Load Phishing Example”</b> and <b>“Load Safe Example”</b> buttons directly above the input fields so first-time users can test both detection extremes immediately without hunting for sample text.</figcaption></figure>
-  <h3>Screen 2: High-Risk Detection (<code>100/100 Dangerous</code>) &amp; Explainable Red Flags</h3>
-  <div class="figs"><figure><img src="images/pg-screen-2-phishing-input.jpg" alt="PhishGuard with a phishing email pasted in" loading="lazy"></figure><figure><img src="images/pg-screen-2-dangerous-flags.jpg" alt="Dangerous result with risk score 100 out of 100 and the first red flags" loading="lazy"></figure><figure><img src="images/pg-screen-2-remaining-flags.jpg" alt="Remaining red flags including suspicious URL and spoofed sender domain" loading="lazy"></figure></div>
-  <p class="fl"><b>UX Decision:</b> Paired a high-contrast red <code>Dangerous (100/100)</code> risk badge with an itemized list of plain-English red flags (e.g., spoofed sender domain <code>paypa1.com</code>, suspicious <code>.xyz</code> URL, urgent threat language) and clear next-step guidance (<em>“Do NOT click any links”</em>).</p>
-  <h3>Screen 3: Safe Verification (<code>0/100 Safe</code>) with Responsible Guardrail Copy</h3>
-  <figure><img src="images/pg-screen-3-safe-result.jpg" alt="Safe result with risk score 0 out of 100 for a Medium newsletter email" loading="lazy"><figcaption><b>UX Decision:</b> Displayed a clear green <code>Safe (0/100)</code> confirmation while intentionally including responsible guardrail copy (<em>“Still always be careful with unexpected emails!”</em>) to prevent false overconfidence on novel social engineering attacks.</figcaption></figure></section>
+<section id="s5"><h2>5. Success Metrics &amp; Validation Framework (Analytical Thinking)</h2>
+<p>To evaluate PhishGuard’s effectiveness in a real consumer or workplace rollout, I defined the following metric hierarchy:</p>
+<ul><li><b>North Star Metric: Safe User Decision Rate (%)</b> <em>(percentage of analyzed emails where users take the recommended safe action—deleting/reporting high-risk emails and safely proceeding on legitimate ones).</em></li>
+<li><b>Core Product Metrics:</b><ul><li><b>Time-to-First-Scan (TTFS):</b> Seconds from page load to first completed analysis (driven by one-click sample buttons).</li><li><b>Red-Flag Comprehension Rate:</b> Thumbs-up/down feedback ratio on whether the listed red flags clearly explained the risk score.</li></ul></li>
+<li><b>Guardrail Metrics:</b><ul><li><b>False Negative Rate (Missed Phishing):</b> High-risk phishing emails scored as <code>Safe</code> (critical trust metric).</li><li><b>False Positive Rate (Alert Fatigue):</b> Legitimate transactional emails misclassified as <code>Dangerous</code>.</li></ul></li></ul></section>
 
-  <section id="s5"><h2>5. Success Metrics &amp; Validation Framework (Analytical Thinking)</h2>
-  <p>To evaluate PhishGuard’s effectiveness in a real consumer or workplace rollout, I defined the following metric hierarchy:</p>
-  <ul><li><b>North Star Metric: Safe User Decision Rate (%)</b> <em>(percentage of analyzed emails where users take the recommended safe action—deleting/reporting high-risk emails and safely proceeding on legitimate ones).</em></li>
-  <li><b>Core Product Metrics:</b><ul style="margin-top:9px"><li><b>Time-to-First-Scan (TTFS):</b> Seconds from page load to first completed analysis (driven by one-click sample buttons).</li><li><b>Red-Flag Comprehension Rate:</b> Thumbs-up/down feedback ratio on whether the listed red flags clearly explained the risk score.</li></ul></li>
-  <li><b>Guardrail Metrics:</b><ul style="margin-top:9px"><li><b>False Negative Rate (Missed Phishing):</b> High-risk phishing emails scored as <code>Safe</code> (critical trust metric).</li><li><b>False Positive Rate (Alert Fatigue):</b> Legitimate transactional emails misclassified as <code>Dangerous</code>.</li></ul></li></ul></section>
-
-  <section id="s6"><h2>6. Key Learnings &amp; v2 Roadmap</h2>
-  <ul><li><b>Key Learning:</b> Explainability builds user trust. Showing <em>why</em> <code>paypa1.com</code> triggered a warning makes users far more likely to follow safety advice than showing a generic red warning banner alone.</li>
-  <li><b>v2 Roadmap:</b><ol style="margin-top:9px"><li><b>Lightweight Browser Extension (Chrome/Edge):</b> Surface real-time risk badges directly inside webmail clients without copy-pasting.</li><li><b>Hybrid Heuristic + NLP Classifier:</b> Combine deterministic URL/domain checks with a lightweight text model to catch subtle business-email-compromise (BEC) phrasing.</li><li><b>In-Card User Feedback Loop:</b> Add a <em>“Was this rating accurate?”</em> micro-survey to capture false positives and refine heuristic weights.</li></ol></li></ul></section>
-
-  <nav class="project-nav" aria-label="Project pagination">
-    <a href="smart-service-tracker.html" class="project-nav-item prev">
-      <span class="project-nav-label">← Previous Case Study</span>
-      <span class="project-nav-title">Smart Service Tracker</span>
-    </a>
-    <a href="index.html#projects" class="project-nav-all">All Case Studies</a>
-    <a href="gmail-teardown.html" class="project-nav-item next">
-      <span class="project-nav-label">Next Case Study →</span>
-      <span class="project-nav-title">Gmail Phishing Warnings</span>
-    </a>
-  </nav>
-
-</div></div></main>
-
-<div id="lightbox-modal" class="lightbox-modal" role="dialog" aria-modal="true" aria-label="Screenshot preview">
-  <button id="lightbox-close" class="lightbox-close" aria-label="Close enlarged screenshot">&times;</button>
-  <div class="lightbox-content">
-    <img id="lightbox-img" class="lightbox-img" src="" alt="">
-    <div id="lightbox-caption" class="lightbox-caption"></div>
-  </div>
-</div>
-
-<script src="script.js"></script>
-</body>
-</html>
+<section id="s6"><h2>6. Key Learnings &amp; v2 Roadmap</h2>
+<ul><li><b>Key Learning:</b> Explainability builds user trust. Showing <em>why</em> <code>paypa1.com</code> triggered a warning makes users far more likely to follow safety advice than showing a generic red warning banner alone.</li>
+<li><b>v2 Roadmap:</b><ol><li><b>Lightweight Browser Extension (Chrome/Edge):</b> Surface real-time risk badges directly inside webmail clients without copy-pasting.</li><li><b>Hybrid Heuristic + NLP Classifier:</b> Combine deterministic URL/domain checks with a lightweight text model to catch subtle business-email-compromise (BEC) phrasing.</li><li><b>In-Card User Feedback Loop:</b> Add a <em>“Was this rating accurate?”</em> micro-survey to capture false positives and refine heuristic weights.</li></ol></li></ul></section>
+<nav class="pager" aria-label="Project navigation"><a class="prev" href="smart-service-tracker.html"><small>Previous project</small><b>Smart Service Tracker</b></a><a class="next" href="gmail-teardown.html"><small>Next project</small><b>Gmail: phishing and suspicious email warnings</b></a></nav><p class="back"><a href="index.html">Back to portfolio</a></p></div></div></main>
+<dialog id="lb" aria-label="Enlarged screenshot"><button type="button">Close</button><img alt=""></dialog>
+<script src="site.js"></script>
+</body></html>

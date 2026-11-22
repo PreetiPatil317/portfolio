@@ -4,108 +4,69 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Gmail Phishing Warnings | Google Product Teardown | Preeti Patil</title>
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
-<meta name="description" content="A teardown of where Gmail’s warning banners still leave users unsure what is wrong, even with over 99.9% of spam and phishing blocked in the backend.">
-<meta property="og:title" content="Gmail Phishing Warnings | Google Product Teardown | Preeti Patil">
-<meta property="og:description" content="A teardown of where Gmail’s warning banners still leave users unsure what is wrong, even with over 99.9% of spam and phishing blocked in the backend.">
-<meta property="og:type" content="article">
-<meta property="og:image" content="https://preetipatil317.github.io/portfolio/images/card-sst.jpg">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Gmail Phishing Warnings | Google Product Teardown | Preeti Patil">
-<meta name="twitter:description" content="A teardown of where Gmail’s warning banners still leave users unsure what is wrong, even with over 99.9% of spam and phishing blocked in the backend.">
-<meta name="twitter:image" content="https://preetipatil317.github.io/portfolio/images/card-sst.jpg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<meta name="description" content="Product Teardown: Gmail’s Phishing &amp; Suspicious Email Warning UX">
+<meta property="og:type" content="website"><meta property="og:title" content="Gmail Phishing Warnings | Google Product Teardown | Preeti Patil"><meta property="og:description" content="Product Teardown: Gmail’s Phishing &amp; Suspicious Email Warning UX"><meta property="og:url" content="https://preetipatil317.github.io/portfolio/gmail-teardown.html"><meta property="og:image" content="https://preetipatil317.github.io/portfolio/images/sst-screen-1-intake.jpg">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Gmail Phishing Warnings | Google Product Teardown | Preeti Patil"><meta name="twitter:description" content="Product Teardown: Gmail’s Phishing &amp; Suspicious Email Warning UX"><meta name="twitter:image" content="https://preetipatil317.github.io/portfolio/images/sst-screen-1-intake.jpg">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div id="reading-progress"></div>
-<main class="wrap">
-  <div class="bar case-study-bar">
-    <b><a href="index.html">Preeti Patil</a></b>
-    <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
-    <nav aria-label="Primary">
-      <a href="index.html#projects">Projects</a>
-      <a href="index.html#leadership">Leadership</a>
-      <a href="index.html#approach">How I think</a>
-      <a href="index.html#about">Skills &amp; education</a>
-    </nav>
-  </div>
+<div id="progress"></div>
+<div class="barwrap"><div class="w bar"><a class="name" href="index.html">Preeti Patil</a><nav class="nav" aria-label="Primary"><a href="index.html">Back to portfolio</a><button class="tbtn" type="button" aria-label="Switch light or dark theme">Theme</button></nav></div></div>
+<main class="w">
+<header class="hero"><div><h1>Google Product Teardown: Gmail Phishing &amp; Suspicious Email Warnings</h1><p class="sub">Product Teardown: Gmail’s Phishing &amp; Suspicious Email Warning UX</p></div>
+<div class="meta"><p><b>Product Evaluated:</b> Gmail (Web &amp; Mobile Client) — Trust &amp; Safety Experience</p><p><b>Focus Area:</b> User Comprehension, Alert Fatigue &amp; Actionable Threat Guidance</p><p><b>Why This Product:</b> Having built <em>PhishGuard — Phishing Email Detection System</em>, I wanted to examine how Google solves email trust and safety at a multi-billion-user scale—and where everyday users still fall prey to social engineering.</p></div></header>
+<div class="layout"><nav class="rail" aria-label="Sections"><a href="#s1">Product Goal &amp; Context</a><a href="#s2">Strengths</a><a href="#s3">Pain Points &amp; Friction</a><a href="#s4">Proposed Improvements</a><a href="#s5">Metrics &amp; A/B Test</a><a href="#s6">Key Takeaway</a></nav><div class="content">
 
-  <header class="hero"><div><h1>Google Product Teardown: Gmail Phishing &amp; Suspicious Email Warnings</h1><p class="sub">Product Teardown: Gmail’s Phishing &amp; Suspicious Email Warning UX</p></div>
-  <div class="meta"><p><b>Product Evaluated:</b> Gmail (Web &amp; Mobile Client) — Trust &amp; Safety Experience</p><p><b>Focus Area:</b> User Comprehension, Alert Fatigue &amp; Actionable Threat Guidance</p><p><b>Why This Product:</b> Having built <em>PhishGuard — Phishing Email Detection System</em>, I wanted to examine how Google solves email trust and safety at a multi-billion-user scale—and where everyday users still fall prey to social engineering.</p></div></header>
-  <div class="layout"><nav class="rail" aria-label="Sections"><a href="#s1">Product Goal &amp; Context</a><a href="#s2">Strengths</a><a href="#s3">Pain Points &amp; Friction</a><a href="#s4">Proposed Improvements</a><a href="#s5">Metrics &amp; A/B Test</a><a href="#s6">Key Takeaway</a></nav><div class="content">
+<section id="s1"><h2>1. Product Goal &amp; Strategic Context</h2>
+<p>Gmail protects over 1.8 billion active users from spam, malware, and phishing every day. While Google’s backend ML models block more than 99.9% of spam and phishing automatically, the <b>remaining 0.1% edge cases</b> that land in a user’s inbox (or Spam folder) rely heavily on <b>interface design and user comprehension</b> to prevent account compromise.</p>
+<h3>Core User Segments</h3>
+<ol>
+<li><b>Everyday Consumer Users:</b> Non-technical users receiving lookalike bank, delivery, or account-verification emails on mobile devices.</li>
+<li><b>Students &amp; Early-Career Professionals:</b> High-frequency users managing job offers, internship links, and shared documents who often act quickly under time pressure.</li>
+<li><b>Enterprise / Workspace Employees:</b> Users targeted by spear-phishing and Business Email Compromise (BEC) where a single click compromises organizational data.</li></ol></section>
 
-  <section id="s1"><h2>1. Product Goal &amp; Strategic Context</h2>
-  <p>Gmail protects over 1.8 billion active users from spam, malware, and phishing every day. While Google’s backend ML models block more than 99.9% of spam and phishing automatically, the <b>remaining 0.1% edge cases</b> that land in a user’s inbox (or Spam folder) rely heavily on <b>interface design and user comprehension</b> to prevent account compromise.</p>
-  <h3>Core User Segments</h3>
-  <ol>
-  <li><b>Everyday Consumer Users:</b> Non-technical users receiving lookalike bank, delivery, or account-verification emails on mobile devices.</li>
-  <li><b>Students &amp; Early-Career Professionals:</b> High-frequency users managing job offers, internship links, and shared documents who often act quickly under time pressure.</li>
-  <li><b>Enterprise / Workspace Employees:</b> Users targeted by spear-phishing and Business Email Compromise (BEC) where a single click compromises organizational data.</li></ol></section>
+<section id="s2"><h2>2. What Gmail Does Well (Strengths)</h2>
+<ul>
+<li><b>Progressive Severity Hierarchy:</b> Gmail differentiates between gray informational banners (<em>“Why is this message in spam?”</em>) and high-contrast red warning banners for confirmed phishing/malware, preventing every suspicious email from looking identical.</li>
+<li><b>Friction-by-Design on Risky Links:</b> When a user opens a message in the Spam folder, Gmail disables clickable hyperlinks and embedded images by default, forcing an explicit user action (<em>“Looks safe”</em>) before external content loads.</li>
+<li><b>One-Click Feedback Loop:</b> Prominent <b>“Report phishing”</b> and <b>“Looks safe”</b> actions turn billions of daily user decisions into labeled training signals for Google’s spam classifiers.</li></ul></section>
 
-  <section id="s2"><h2>2. What Gmail Does Well (Strengths)</h2>
-  <ul>
-  <li><b>Progressive Severity Hierarchy:</b> Gmail differentiates between gray informational banners (<em>“Why is this message in spam?”</em>) and high-contrast red warning banners for confirmed phishing/malware, preventing every suspicious email from looking identical.</li>
-  <li><b>Friction-by-Design on Risky Links:</b> When a user opens a message in the Spam folder, Gmail disables clickable hyperlinks and embedded images by default, forcing an explicit user action (<em>“Looks safe”</em>) before external content loads.</li>
-  <li><b>One-Click Feedback Loop:</b> Prominent <b>“Report phishing”</b> and <b>“Looks safe”</b> actions turn billions of daily user decisions into labeled training signals for Google’s spam classifiers.</li></ul></section>
+<section id="s3"><h2>3. User Pain Points &amp; UX Friction (Where Users Still Struggle)</h2>
+<p>Even with strong backend filtering, three UX gaps appear when suspicious emails reach users:</p>
+<ol>
+<li><b>Generic Warning Copy (“Black-Box” Explanations):</b>
+<ul class="fr"><li><em>The Friction:</em> Banners often state <em>“Be careful with this message. Gmail could not verify that it actually came from [domain]”</em> without calling out the exact visual cue (e.g., lookalike characters like <code>paypa1.com</code> or a mismatched reply-to address).</li>
+<li><em>User Impact:</em> Non-technical users who recognize the brand logo inside the email often ignore generic technical warnings because they don’t see <em>what</em> is wrong.</li></ul></li>
+<li><b>Mobile Screen Truncation:</b>
+<ul class="fr"><li><em>The Friction:</em> On mobile screens, long sender email addresses are often collapsed to just the Display Name (e.g., <code>IT Support</code> instead of <code>support@unknown-domain.xyz</code>), hiding the strongest spoofing signal unless the user taps to expand header details.</li></ul></li>
+<li><b>Lack of Safe Next-Step Guidance:</b>
+<ul class="fr"><li><em>The Friction:</em> When an email looks like a bank or HR alert, users ask: <em>“If I shouldn’t click this link, how do I check if my account actually has an issue?”</em> Current banners focus on blocking action rather than guiding safe out-of-band verification.</li></ul></li></ol></section>
 
-  <section id="s3"><h2>3. User Pain Points &amp; UX Friction (Where Users Still Struggle)</h2>
-  <p>Even with strong backend filtering, three UX gaps appear when suspicious emails reach users:</p>
-  <ol>
-  <li><b>Generic Warning Copy (“Black-Box” Explanations):</b>
-  <ul class="fr"><li><em>The Friction:</em> Banners often state <em>“Be careful with this message. Gmail could not verify that it actually came from [domain]”</em> without calling out the exact visual cue (e.g., lookalike characters like <code>paypa1.com</code> or a mismatched reply-to address).</li>
-  <li><em>User Impact:</em> Non-technical users who recognize the brand logo inside the email often ignore generic technical warnings because they don’t see <em>what</em> is wrong.</li></ul></li>
-  <li><b>Mobile Screen Truncation:</b>
-  <ul class="fr"><li><em>The Friction:</em> On mobile screens, long sender email addresses are often collapsed to just the Display Name (e.g., <code>IT Support</code> instead of <code>support@unknown-domain.xyz</code>), hiding the strongest spoofing signal unless the user taps to expand header details.</li></ul></li>
-  <li><b>Lack of Safe Next-Step Guidance:</b>
-  <ul class="fr"><li><em>The Friction:</em> When an email looks like a bank or HR alert, users ask: <em>“If I shouldn’t click this link, how do I check if my account actually has an issue?”</em> Current banners focus on blocking action rather than guiding safe out-of-band verification.</li></ul></li></ol></section>
+<section id="s4"><h2>4. Proposed Product Improvements (Prioritized Solutions)</h2>
+<p>To reduce phishing click-through rates without increasing alert fatigue, I propose three targeted enhancements:</p>
+<div class="scroll" role="region" aria-label="Proposed improvements table" tabindex="0"><table style="min-width:760px"><thead><tr><th>Proposed Feature</th><th>Target Pain Point</th><th>Expected Impact</th><th>Implementation Effort</th><th>Priority</th></tr></thead><tbody>
+<tr><td>1. Granular “Why Flagged” Bullets Inside Warning Banner</td><td>Generic black-box warning copy</td><td><b>High</b> — Helps users spot specific deception cues immediately</td><td><b>Low</b> — Uses signals Gmail’s classifier already computes</td><td><b>P0 (Build First)</b></td></tr>
+<tr><td>2. Auto-Expanded External Domain Pill on Mobile</td><td>Hidden sender addresses on mobile screens</td><td><b>High</b> — Exposes lookalike domains before users tap links</td><td><b>Low</b> — Frontend UI rule for first-time/unverified senders</td><td><b>P0 (Build First)</b></td></tr>
+<tr><td>3. Safe Out-of-Band Verification Prompt</td><td>User uncertainty on urgent account alerts</td><td><b>Medium</b> — Coaches safe habits (<em>“Open the official app directly”</em>)</td><td><b>Low</b> — Dynamic copy addition for financial/account keywords</td><td><b>P1 (Next)</b></td></tr></tbody></table></div>
+<h3>Deep Dive on P0 Solution: Explainable Warning Chips</h3>
+<p>Instead of a single generic sentence, Gmail’s warning banner for unverified urgent emails would display <b>1–2 concise explanation chips</b> derived from existing classifier signals:</p>
+<ul>
+<li><em>Example:</em> <code>⚠ Suspicious Sender Domain</code> (<code>paypa1-security.com</code> mimics <code>paypal.com</code>) + <code>🔗 External Redirect Link</code></li>
+<li><em>Actionable Guidance: “To stay safe, open the official website or app directly instead of clicking links in this email.”</em></li></ul></section>
 
-  <section id="s4"><h2>4. Proposed Product Improvements (Prioritized Solutions)</h2>
-  <p>To reduce phishing click-through rates without increasing alert fatigue, I propose three targeted enhancements:</p>
-  <div class="scroll" role="region" aria-label="Proposed improvements table" tabindex="0"><table style="min-width:760px"><thead><tr><th>Proposed Feature</th><th>Target Pain Point</th><th>Expected Impact</th><th>Implementation Effort</th><th>Priority</th></tr></thead><tbody>
-  <tr><td>1. Granular “Why Flagged” Bullets Inside Warning Banner</td><td>Generic black-box warning copy</td><td><b>High</b> — Helps users spot specific deception cues immediately</td><td><b>Low</b> — Uses signals Gmail’s classifier already computes</td><td><b>P0 (Build First)</b></td></tr>
-  <tr><td>2. Auto-Expanded External Domain Pill on Mobile</td><td>Hidden sender addresses on mobile screens</td><td><b>High</b> — Exposes lookalike domains before users tap links</td><td><b>Low</b> — Frontend UI rule for first-time/unverified senders</td><td><b>P0 (Build First)</b></td></tr>
-  <tr><td>3. Safe Out-of-Band Verification Prompt</td><td>User uncertainty on urgent account alerts</td><td><b>Medium</b> — Coaches safe habits (<em>“Open the official app directly”</em>)</td><td><b>Low</b> — Dynamic copy addition for financial/account keywords</td><td><b>P1 (Next)</b></td></tr></tbody></table></div>
-  <h3>Deep Dive on P0 Solution: Explainable Warning Chips</h3>
-  <p>Instead of a single generic sentence, Gmail’s warning banner for unverified urgent emails would display <b>1–2 concise explanation chips</b> derived from existing classifier signals:</p>
-  <ul>
-  <li><em>Example:</em> <code>⚠ Suspicious Sender Domain</code> (<code>paypa1-security.com</code> mimics <code>paypal.com</code>) + <code>🔗 External Redirect Link</code></li>
-  <li><em>Actionable Guidance: “To stay safe, open the official website or app directly instead of clicking links in this email.”</em></li></ul></section>
+<section id="s5"><h2>5. Success Metrics &amp; Experimentation Plan (A/B Test)</h2>
+<p>Before rolling out <b>Explainable Warning Chips</b> globally, I would run a randomized <b>A/B experiment</b> on 1% of traffic receiving unverified/suspicious-tier messages:</p>
+<ul>
+<li><b>North Star Metric: Malicious Link Click-Through Rate (CTR)</b> on flagged suspicious emails <em>(Target: Statistically significant decrease).</em></li>
+<li><b>Secondary / Adoption Metrics:</b><ul class="fr"><li><b>“Report Phishing” Conversion Rate:</b> Increase in users actively reporting suspicious emails after seeing clear red-flag chips.</li><li><b>Banner Dismissal / “Looks Safe” Override Rate:</b> Measures whether explainable cues reduce accidental user overrides on real threats.</li></ul></li>
+<li><b>Guardrail Metrics:</b><ul class="fr"><li><b>False-Positive Override Friction:</b> Ensure legitimate newsletters or transactional emails don’t suffer higher accidental deletion rates.</li><li><b>Email Read Completion Time:</b> Confirm the expanded banner does not slow down normal inbox triage.</li></ul></li></ul></section>
 
-  <section id="s5"><h2>5. Success Metrics &amp; Experimentation Plan (A/B Test)</h2>
-  <p>Before rolling out <b>Explainable Warning Chips</b> globally, I would run a randomized <b>A/B experiment</b> on 1% of traffic receiving unverified/suspicious-tier messages:</p>
-  <ul>
-  <li><b>North Star Metric: Malicious Link Click-Through Rate (CTR)</b> on flagged suspicious emails <em>(Target: Statistically significant decrease).</em></li>
-  <li><b>Secondary / Adoption Metrics:</b><ul class="fr"><li><b>“Report Phishing” Conversion Rate:</b> Increase in users actively reporting suspicious emails after seeing clear red-flag chips.</li><li><b>Banner Dismissal / “Looks Safe” Override Rate:</b> Measures whether explainable cues reduce accidental user overrides on real threats.</li></ul></li>
-  <li><b>Guardrail Metrics:</b><ul class="fr"><li><b>False-Positive Override Friction:</b> Ensure legitimate newsletters or transactional emails don’t suffer higher accidental deletion rates.</li><li><b>Email Read Completion Time:</b> Confirm the expanded banner does not slow down normal inbox triage.</li></ul></li></ul></section>
-
-  <section id="s6"><h2>6. Key Takeaway as an Aspiring Google APM</h2>
-  <p>Building <em>PhishGuard</em> taught me that <b>detection accuracy alone does not protect users—comprehension does.</b> At Google’s scale, small improvements in how warning banners communicate <em>why</em> an email is risky can protect millions of users from social engineering without adding friction to legitimate communication.</p></section>
-
-  <nav class="project-nav" aria-label="Project pagination">
-    <a href="phishguard.html" class="project-nav-item prev">
-      <span class="project-nav-label">← Previous Case Study</span>
-      <span class="project-nav-title">PhishGuard</span>
-    </a>
-    <a href="index.html#projects" class="project-nav-all">All Case Studies</a>
-    <a href="leadership.html" class="project-nav-item next">
-      <span class="project-nav-label">Next Showcase →</span>
-      <span class="project-nav-title">Leadership &amp; Communication</span>
-    </a>
-  </nav>
-
-</div></div></main>
-
-<div id="lightbox-modal" class="lightbox-modal" role="dialog" aria-modal="true" aria-label="Screenshot preview">
-  <button id="lightbox-close" class="lightbox-close" aria-label="Close enlarged screenshot">&times;</button>
-  <div class="lightbox-content">
-    <img id="lightbox-img" class="lightbox-img" src="" alt="">
-    <div id="lightbox-caption" class="lightbox-caption"></div>
-  </div>
-</div>
-
-<script src="script.js"></script>
-</body>
-</html>
+<section id="s6"><h2>6. Key Takeaway as an Aspiring Google APM</h2>
+<p>Building <em>PhishGuard</em> taught me that <b>detection accuracy alone does not protect users—comprehension does.</b> At Google’s scale, small improvements in how warning banners communicate <em>why</em> an email is risky can protect millions of users from social engineering without adding friction to legitimate communication.</p></section>
+<nav class="pager" aria-label="Project navigation"><a class="prev" href="phishguard.html"><small>Previous project</small><b>PhishGuard</b></a><a class="next" href="leadership.html"><small>Next project</small><b>Leadership & communication showcase</b></a></nav><p class="back"><a href="index.html">Back to portfolio</a></p></div></div></main>
+<dialog id="lb" aria-label="Enlarged screenshot"><button type="button">Close</button><img alt=""></dialog>
+<script src="site.js"></script>
+</body></html>
